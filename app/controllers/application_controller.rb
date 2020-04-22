@@ -23,7 +23,7 @@ class ApplicationController < Sinatra::Base
     session[:user_id] = @user.id #here we are setting the new user id to a new instance @user_id
 
     redirect '/users/home' #redirects home
-    puts params
+    #puts params
   end
 
   get '/sessions/login' do
