@@ -1,2 +1,22 @@
 <h1>Log In Below:</h1>
 
+<form action="/sessions" method="post">
+  <ul>
+    <li>
+      <label for="email">Email</label>
+      <input id="email" type="text" name="email" />
+    </li>
+    <li>
+      <label for="password">Password</label>
+      <textarea id="password" type="text" name="password">
+      </textarea>
+    </li>
+  </ul>
+  <input type="submit" />
+</form>
+
+<form method="post" action="/sessions">
+  <label for="login">Login</label>
+  <input type="hidden" name="_method" value="delete" />
+  <input type="submit" />
+</form>

@@ -48,7 +48,7 @@ class ApplicationController < Sinatra::Base
 
   get '/users/home' do
 
-    @user = User.find(session[:user_id])
+    @user = User.find(session[:user_id]) #finds the current user based on the id stored in the sessions hash and sets it to an instance variable 
     erb :'/users/home'
   end
 end
