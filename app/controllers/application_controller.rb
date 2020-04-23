@@ -35,20 +35,20 @@ class ApplicationController < Sinatra::Base
   post '/sessions' do
     @user = User.find_by(email: params[:email], password: params[:password])
     if @user
-      session[:user_id] = @user.id
+      session[:user_id] = @user.id #this finds the correct user by db and logs them in
       redirect '/users/home'
     end
     redirect '/sessions/login'
   end
 
   get '/sessions/logout' do
-    session.clear
+    session.clear #clears the data upon logout
     redirect '/'
   end
 
   get '/users/home' do
 
-    @user = User.find(session[:user_id]) #finds the current user based on the id stored in the sessions hash and sets it to an instance variable 
+    @user = User.find(session[:user_id]) #finds the current user based on the id stored in the sessions hash and sets it to an instance variable
     erb :'/users/home'
   end
 end
